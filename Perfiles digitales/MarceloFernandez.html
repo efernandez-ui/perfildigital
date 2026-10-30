@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#312782">
+  <meta name="description" content="Contacto de Marcelo Fernández, Líder Comercial Buenos Aires en INTERCAP.">
+  <title>Marcelo Fernández | INTERCAP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --violet: #312782;
+      --violet-dark: #211b61;
+      --blue: #0867b9;
+      --ink: #25264a;
+      --muted: #626681;
+      --line: #e6e6f1;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { min-height: 100%; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: clip;
+      background: #f0f3f5;
+      color: var(--ink);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .profile {
+      width: min(100%, 1080px);
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 150px;
+      margin-left: calc(50% - 50vw);
+      padding: 0 20px;
+      overflow: hidden;
+      background: var(--violet);
+      color: #fff;
+    }
+
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before { width: 340px; height: 340px; top: -220px; right: -90px; }
+    .hero::after { width: 270px; height: 270px; right: -170px; bottom: -125px; }
+
+    .brand {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      width: auto;
+    }
+
+    .brand img {
+      display: block;
+      width: 180px;
+      height: auto;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin: 80px 20px 0;
+    }
+
+    .identity {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+      min-width: 0;
+      padding: 20px 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(36, 31, 106, .04);
+    }
+
+    .avatar {
+      display: block;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: -170px;
+      left: 22px;
+      z-index: 1;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 30%;
+      background: #e5e5ee;
+      box-shadow: 0 8px 22px rgba(32, 25, 100, .16);
+    }
+
+    .content { grid-column: 2; grid-row: 1 / span 2; min-width: 0; padding: 0 0 28px; }
+
+    h1 {
+      margin: 0;
+      color: var(--violet-dark);
+      font-size: clamp(22px, 2.6vw, 29px);
+      letter-spacing: -.04em;
+      line-height: 1.13;
+      text-align: left;
+    }
+
+    .role {
+      margin: 10px 0 0;
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .links { display: grid; gap: 11px; }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      min-height: 70px;
+      padding: 13px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      text-decoration: none;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .link:hover {
+      transform: translateY(-2px);
+      border-color: #c9c4e9;
+      box-shadow: 0 8px 22px rgba(49, 39, 130, .09);
+    }
+
+    .link:focus-visible, .contact-action:focus-visible {
+      outline: 3px solid #75b9f0;
+      outline-offset: 3px;
+    }
+
+    .icon {
+      display: grid;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 12px;
+      background: #f0eefb;
+      color: var(--violet);
+    }
+
+    .icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .link-text { min-width: 0; flex: 1; }
+    .link-title { display: block; color: var(--ink); font-size: 15px; font-weight: 700; line-height: 1.35; }
+    .link-detail { display: block; margin-top: 3px; color: var(--muted); font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; }
+    .arrow { flex: 0 0 auto; color: #9694ac; font-size: 22px; line-height: 1; }
+
+    .contact-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      margin-top: 20px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: var(--violet);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .18s ease, transform .18s ease;
+    }
+
+    .contact-action:hover { background: var(--violet-dark); transform: translateY(-2px); }
+    .contact-action svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-action--mobile { display: none; }
+
+    .office {
+      grid-column: 1;
+      grid-row: 2;
+      padding: 20px 22px 23px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .office-label {
+      margin: 0 0 7px;
+      color: var(--violet);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .office p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .office a { color: var(--violet); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .social-footer {
+      grid-column: 1;
+      grid-row: 3;
+      align-self: start;
+      margin: 0 0 30px;
+      padding: 20px 0 0;
+      border-top: 2px solid #d9d9df;
+    }
+
+    .social-footer p { margin: 0 0 10px; color: #333; font-size: 14px; }
+    .social-icons { display: flex; align-items: center; gap: 14px; }
+    .social-icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: #484848;
+      color: #fff;
+      text-decoration: none;
+    }
+    a.social-icon { transition: transform .18s ease, background .18s ease; }
+    a.social-icon:hover { transform: translateY(-2px); background: var(--violet); }
+    a.social-icon:focus-visible { outline: 3px solid #75b9f0; outline-offset: 3px; }
+    .social-icon svg { display: block; width: 22px; height: 22px; fill: currentColor; }
+    .social-icon.instagram svg { fill: none; stroke: currentColor; stroke-width: 2; }
+    .social-icon.linkedin { font-size: 18px; font-weight: 800; letter-spacing: -.08em; }
+
+    .video-section {
+      grid-column: 2;
+      grid-row: 3;
+      min-width: 0;
+      margin: 0 0 32px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .video-section h2 {
+      margin: 0 0 14px;
+      color: var(--violet);
+      font-size: 18px;
+    }
+
+    .video-section video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      background: #111;
+    }
+
+    @media (max-width: 720px) {
+      .profile { max-width: 510px; }
+      .hero { height: 170px; }
+      .brand img { width: 150px; }
+      .layout { display: flex; flex-direction: column; align-items: stretch; margin: 0; }
+      .identity {
+        order: 0;
+        padding: 74px 22px 24px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
+      }
+      .avatar { width: 105px; height: 105px; top: -46px; left: 50%; transform: translateX(-50%); border-width: 3px; }
+      h1 { font-size: clamp(18px, 5.7vw, 24px); text-align: center; }
+      .role { text-align: center; }
+      .content { order: 2; padding: 20px 20px 32px; }
+      .contact-action--desktop { display: none; }
+      .contact-action--mobile { display: flex; }
+      .office { order: 1; margin: 20px 20px 0; text-align: center; }
+      .social-footer { order: 4; margin: 0; padding: 20px 22px 26px; background: #fff; text-align: center; }
+      .social-icons { justify-content: center; }
+      .video-section { order: 3; margin: 0 20px 32px; }
+      .video-section h2 { text-align: center; }
+    }
+
+    @media (max-width: 380px) {
+      .content { padding-right: 14px; padding-left: 14px; }
+      .social-icons { gap: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .link, .contact-action, a.social-icon { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="profile">
+    <article class="card" aria-labelledby="name">
+      <div class="hero"><div class="brand"><img src="../Originales/logointercap.svg" alt="INTERCAP" width="150" height="23"></div></div>
+      <div class="layout">
+        <aside class="identity">
+          <img class="avatar" src="../Originales/MarceloFernandez.png" alt="Foto de Marcelo Fernández" width="150" height="150">
+          <h1 id="name">Marcelo Fernández</h1>
+          <p class="role">Líder Comercial · Buenos Aires</p>
+        </aside>
+        <section class="content" aria-label="Contacto de Marcelo Fernández">
+        <nav class="links" aria-label="Opciones de contacto">
+          <a class="link" href="https://www.intercap.com.ar/TiendaVirtual/" target="_blank" rel="noopener noreferrer" aria-label="Abrir la tienda virtual de INTERCAP">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-2.5 2.4-4 5.6-4 9s1.5 6.6 4 9c2.5-2.4 4-5.6 4-9s-1.5-6.6-4-9Z"/></svg></span>
+            <span class="link-text"><span class="link-title">Tienda virtual INTERCAP</span><span class="link-detail">intercap.com.ar/TiendaVirtual</span></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link" href="https://wa.me/5491168676705" target="_blank" rel="noopener noreferrer" aria-label="Escribir a Marcelo por WhatsApp al +54 9 11 6867-6705">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.1A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.6 7.8c-.4-.3-.8-.1-1 .2-.7.9-.5 2 .1 3.1 1 1.8 2.6 3.2 4.5 4.1 1.1.5 2.2.5 3-.3.3-.2.4-.6.1-.9l-1.3-.9c-.3-.2-.6-.2-.9.1l-.6.6c-1.4-.6-2.4-1.6-3-3l.6-.6c.3-.3.3-.6.1-.9Z"/></svg></span>
+            <span class="link-text"><span class="link-title">WhatsApp</span><span class="link-detail">+54 9 11 6867-6705</span></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link" href="mailto:mfernandez@intercap.com.ar">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
+            <span class="link-text"><span class="link-title">Correo electrónico</span><span class="link-detail">mfernandez@intercap.com.ar</span></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link" href="tel:08108882113">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 3.5h2.5l1.2 4.3-1.8 1.7a15.5 15.5 0 0 0 6 6l1.7-1.8 4.3 1.2v2.5a2 2 0 0 1-2.2 2 17 17 0 0 1-14.7-14.7 2 2 0 0 1 2-2.2Z"/></svg></span>
+            <span class="link-text"><span class="link-title">Atención INTERCAP</span><span class="link-detail">0810 888 2113</span></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link" href="https://www.google.com/maps/place/Lagos+Garc%C3%ADa+4470,+B1839+9+de+Abril,+Provincia+de+Buenos+Aires/@-34.7681914,-58.4831812,1037m/data=!3m2!1e3!4b1!4m6!3m5!1s0x95bcd1e17bd95b7f:0x85eb15dcd63cbcf2!8m2!3d-34.7681914!4d-58.4806009!16s%2Fg%2F11nhj5df67?entry=ttu&amp;g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="link-text"><span class="link-title">Cómo llegar</span><span class="link-detail">Centro de Distribución Buenos Aires</span></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+        <a class="contact-action contact-action--desktop" href="Marcelo-Fernandez.vcf" download="Marcelo-Fernandez.vcf" type="text/vcard">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/></svg>
+          Descargar contacto
+        </a>
+        <a class="contact-action contact-action--mobile" href="Marcelo-Fernandez.vcf" type="text/vcard">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M19 8v6m-3-3h6"/></svg>
+          Agregar a contactos
+        </a>
+        </section>
+        <div class="office">
+          <h2 class="office-label">Centro de Distribución Buenos Aires</h2>
+          <p><a href="tel:01143572232">011 4357-2232</a> / <a href="tel:01143572233">2233</a><br>
+            Lagos García 4470 · CP 1839<br>
+            Esteban Echeverría, Buenos Aires, Argentina</p>
+        </div>
+      <section class="video-section" aria-labelledby="video-title">
+        <h2 id="video-title">Video institucional</h2>
+        <video controls preload="metadata" playsinline poster="https://imagenes-inp-aws.s3.us-east-1.amazonaws.com/imagenes/descargas/Deposito-nuevo.jpg" aria-label="Video institucional de INTERCAP">
+          <source src="https://imagenes-inp-aws.s3.amazonaws.com/imagenes/descargas/CentroEE.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video. <a href="https://imagenes-inp-aws.s3.amazonaws.com/imagenes/descargas/CentroEE.mp4">Abrir video institucional</a>.
+        </video>
+      </section>
+      <footer class="social-footer">
+        <p>Seguinos en nuestras redes:</p>
+        <div class="social-icons" aria-label="Redes sociales de INTERCAP">
+          <a class="social-icon" href="https://t.me/Intercap_srl" target="_blank" rel="noopener noreferrer" aria-label="Telegram de INTERCAP" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 3.4 2.7 10.7c-.9.4-.9 1.1 0 1.4l4.8 1.5 1.8 5.7c.2.7.6.8 1.1.3l2.7-2.6 4.6 3.4c.8.5 1.4.2 1.6-.7l3.1-14.8c.2-1.1-.3-1.7-1-1.5ZM8.3 13l10.5-6.6-8.6 8.2-.4 3.1L8.3 13Z"/></svg></a>
+          <a class="social-icon" href="https://www.facebook.com/intercapsrl/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de INTERCAP" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.3 21v-8.1h2.8l.4-3.2h-3.2V7.6c0-.9.3-1.5 1.6-1.5h1.7V3.2a23 23 0 0 0-2.5-.2c-2.5 0-4.2 1.5-4.2 4.3v2.4H8v3.2h2.9V21h3.4Z"/></svg></a>
+          <a class="social-icon instagram" href="https://www.instagram.com/intercap_srl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de INTERCAP" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/></svg></a>
+          <a class="social-icon linkedin" href="https://www.linkedin.com/company/intercap-s-r-l" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de INTERCAP" title="LinkedIn">in</a>
+          <a class="social-icon" href="https://www.youtube.com/channel/UCIa77xvGpcok30JGzr4ko7w" target="_blank" rel="noopener noreferrer" aria-label="YouTube de INTERCAP" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.2c-.2-.8-.8-1.4-1.6-1.6C18 5.2 12 5.2 12 5.2s-6 0-7.4.4C3.8 5.8 3.2 6.4 3 7.2c-.4 1.4-.4 4.8-.4 4.8s0 3.4.4 4.8c.2.8.8 1.4 1.6 1.6 1.4.4 7.4.4 7.4.4s6 0 7.4-.4c.8-.2 1.4-.8 1.6-1.6.4-1.4.4-4.8.4-4.8s0-3.4-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+        </div>
+      </footer>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
