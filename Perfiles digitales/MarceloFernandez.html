@@ -276,12 +276,12 @@
 
     @media (max-width: 720px) {
       .profile { max-width: 510px; }
-      .hero { height: 170px; }
+      .hero { height: 140px; }
       .brand img { width: 150px; }
-      .layout { display: flex; flex-direction: column; align-items: stretch; margin: 0; }
+      .layout { display: flex; flex-direction: column; align-items: stretch; gap: 0; margin: 0; }
       .identity {
         order: 0;
-        padding: 74px 22px 24px;
+        padding: 74px 22px 6px;
         border: 0;
         border-radius: 0;
         box-shadow: none;
@@ -289,15 +289,30 @@
       }
       .avatar { width: 105px; height: 105px; top: -46px; left: 50%; transform: translateX(-50%); border-width: 3px; }
       h1 { font-size: clamp(18px, 5.7vw, 24px); text-align: center; }
-      .role { text-align: center; }
-      .content { order: 2; padding: 20px 20px 32px; }
+      .role { margin-top: 6px; text-align: center; }
+      .content { order: 2; padding: 8px 20px 16px; }
+      .links { gap: 8px; }
+      .link { min-height: 62px; gap: 12px; padding: 10px 12px; }
+      .icon { flex-basis: 38px; width: 38px; height: 38px; }
+      .contact-action { min-height: 48px; margin-top: 12px; }
       .contact-action--desktop { display: none; }
       .contact-action--mobile { display: flex; }
-      .office { order: 1; margin: 20px 20px 0; text-align: center; }
-      .social-footer { order: 4; margin: 0; padding: 20px 22px 26px; background: #fff; text-align: center; }
-      .social-icons { justify-content: center; }
-      .video-section { order: 3; margin: 0 20px 32px; }
-      .video-section h2 { text-align: center; }
+      .office { order: 1; margin: 8px 20px 0; padding: 14px 18px 16px; text-align: center; }
+      .office-label { margin-bottom: 4px; }
+      .office p { line-height: 1.45; }
+      .social-footer {
+        order: 4;
+        align-self: stretch;
+        margin: 0 20px 16px;
+        padding: 14px 18px 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+        text-align: center;
+      }
+      .social-icons { justify-content: center; flex-wrap: wrap; }
+      .video-section { order: 3; margin: 0 20px 16px; padding: 14px; }
+      .video-section h2 { margin-bottom: 10px; text-align: center; }
     }
 
     @media (max-width: 380px) {
